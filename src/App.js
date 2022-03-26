@@ -12,6 +12,9 @@ import { getItemFromSessionStore } from './utils.js';
 const Login = React.lazy(() => import('./Components/Auth/Login'));
 const Register = React.lazy(() => import('./Components/Auth/Register'));
 
+// Protected Route for Auth
+const Layout = React.lazy(() => import('./Containers/Layout'));
+
 function App() {
   const [authed, setAuthed] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -33,7 +36,7 @@ function App() {
             <Switch>
               <Route path='/login' exact component={Login} />
               <Route path='/register' exact component={Register} />
-
+              <Route path="/" name="Overview" component={authed ? Layout : Login} />
             </Switch>
           </React.Suspense>
         </BrowserRouter>
