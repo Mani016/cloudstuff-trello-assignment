@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+// Packages
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+
+// Context API
+import { AuthContext } from './authContext';
+import { ToastContainer } from 'react-toastify';
+import './scss/index.scss';
+import 'react-toastify/dist/ReactToastify.css';
+import { getItemFromSessionStore } from './utils.js';
+const Login = React.lazy(() => import('./Components/Auth/Login'));
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const [authed, setAuthed] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loggedIn = getItemFromSessionStore('userId');
+    if (loggedIn) {
+      setAuthed(true);
+    }
+
+    setLoading(false);
+  }, []);
+  return loading ? (
+    'loading...'
+  ) : (
+    <AuthContext.Provider value={{ authed, setAuthed }}>
+        <BrowserRouter>
+          <React.Suspense fallback={loading}>
+            <Switch>
+              <Route path='/login' exact component={Login} />
+            </Switch>
+          </React.Suspense>
+        </BrowserRouter>
+      <ToastContainer />
+    </AuthContext.Provider>
   );
 }
 
