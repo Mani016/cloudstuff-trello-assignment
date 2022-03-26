@@ -10,6 +10,7 @@ import './scss/index.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { getItemFromSessionStore } from './utils.js';
 const Login = React.lazy(() => import('./Components/Auth/Login'));
+const Register = React.lazy(() => import('./Components/Auth/Register'));
 
 function App() {
   const [authed, setAuthed] = useState(false);
@@ -31,6 +32,8 @@ function App() {
           <React.Suspense fallback={loading}>
             <Switch>
               <Route path='/login' exact component={Login} />
+              <Route path='/register' exact component={Register} />
+
             </Switch>
           </React.Suspense>
         </BrowserRouter>
