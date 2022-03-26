@@ -1,0 +1,50 @@
+@import 'variables';
+.boardContainer {
+  background-color: #e3e3e3 !important;
+}
+.react-trello-lane {
+  // background-color: #ffffff !important
+  border: 1px solid $primary;
+}
+.smooth-dnd-container {
+  .kVcBXv {
+    background-color: $primary !important;
+    .dlERsT {
+      background-color: $primary !important;
+    }
+  }
+}
+
+.fFPUbn,
+.bflSfR {
+  border: 0 !important;
+}
+.hlMmhO {
+  font-size: 91% !important;
+  border-radius: 20px !important;
+  padding: 0px 10px !important;
+}
+.board-details-footer {
+  background: #8080802e !important;
+  position: fixed !important;
+  width: 100%;
+  bottom: 0px !important;
+  img {
+    height: 44px;
+    width: 44px;
+  }
+}
+
+.box {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.purple {
+  background: #ab3fdd;
+}
+.content {
+  height: 479px;
+  overflow: scroll;
+}
