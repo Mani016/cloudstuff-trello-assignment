@@ -1,0 +1,26 @@
+html,body,#root{
+    height:100%
+}
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+// Btn Custom CSS
+.btn-primary{
+background-color: $primary !important;
+border-color: $primary !important;
+}
+.btn-outline-primary{
+color:$primary  !important;
+border-color: $primary !important;
+}
+.offcanvas-end{
+    width: 600px !important;
+}
+.bg-primary{
+    background-color: $primary !important;
+border-color: $primary !important;
+}

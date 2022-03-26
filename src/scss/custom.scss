@@ -1,0 +1,39 @@
+@import "variables";
+
+.search-border {
+  border-radius: 23px !important;
+}
+.brand-logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 11px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+.avatar-img {
+  height: 32px;
+  width: 32px;
+  margin: auto;
+}
+.vl {
+    border-left: 1px solid $primary;
+  }
+.input-icons i {
+  position: absolute;
+}
+
+.input-icons {
+  width: 100%;
+}
+
+.icon {
+  padding: 10px;
+}
+
+.input-field {
+  text-align: center;
+}
+.active_nav{
+  color:$primary !important;
+  border-bottom: 1px solid $primary !important;
+}
